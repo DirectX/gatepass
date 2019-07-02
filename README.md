@@ -2,8 +2,6 @@
 
 Raspberry Pi Telegram Remote Control Bot
 
-https://github.com/stianeikeland/go-rpio
-
 ## Prerequisites
 
 ### Hardware
