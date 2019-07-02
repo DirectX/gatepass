@@ -10,7 +10,7 @@ Raspberry Pi Telegram Remote Control Bot
 
 ### Software
 
-#### Node
+#### Node.js
 
 ```bash
 sudo apt update
@@ -36,6 +36,46 @@ Replace placeholders in `.env` with actual API key
 ```bash
 npm install
 npm start
+```
+
+## Systemd Service
+
+```bash
+sudo nano /etc/systemd/system/gatepass.service
+```
+
+```bash
+[Unit]
+Description=GatePass
+After=network.target
+
+[Service]
+WorkingDirectory=/home/pi/projects/gatepass
+ExecStart=/usr/bin/npm start
+Restart=on-failure
+User=pi
+
+[Install]
+WantedBy=multi-user.target
+```
+
+### Start and Status
+
+```bash
+sudo service gatepass start
+sudo service gatepass status
+```
+
+Output:
+```bash
+● gatepass.service - GatePass
+   Loaded: loaded (/etc/systemd/system/gatepass.service; disabled; vendor preset: enabled)
+   Active: active (running) since Tue 2019-07-02 20:03:46 UTC; 1s ago
+ Main PID: 3345 (node)
+    Tasks: 6 (limit: 2200)
+   Memory: 5.2M
+   CGroup: /system.slice/gatepass.service
+           └─3345 node /usr/bin/npm start
 ```
 
 ## References
