@@ -1,0 +1,28 @@
+{
+  "name": "gatepass",
+  "version": "1.0.0",
+  "description": "Raspberry Pi Telegram Remote Control Bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DirectX/gatepass.git"
+  },
+  "keywords": [
+    "Raspberry",
+    "Pi",
+    "Telegram",
+    "Bot"
+  ],
+  "author": "Denis Khoruzhiy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DirectX/gatepass/issues"
+  },
+  "homepage": "https://github.com/DirectX/gatepass#readme",
+  "dependencies": {
+    "pi-servo": "^1.0.2"
+  }
+}
