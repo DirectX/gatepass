@@ -59,15 +59,16 @@ User=pi
 WantedBy=multi-user.target
 ```
 
-### Start and Status
+### Start and Enable
 
 ```bash
 sudo service gatepass start
-sudo service gatepass status
+sudo systemctl enable gatepass.service
 ```
 
-Output:
+### Status
 ```bash
+sudo service gatepass status
 ● gatepass.service - GatePass
    Loaded: loaded (/etc/systemd/system/gatepass.service; disabled; vendor preset: enabled)
    Active: active (running) since Tue 2019-07-02 20:03:46 UTC; 1s ago
@@ -81,3 +82,4 @@ Output:
 ## References
 
 * [Raspberry Pi Servo Motor control](https://tutorials-raspberrypi.com/raspberry-pi-servo-motor-control/)
+* [Systemd Service in Node.js on Raspberry Pi](https://medium.com/@simon_prickett/writing-a-systemd-service-in-node-js-on-raspberry-pi-be88d9bc2e8d)
