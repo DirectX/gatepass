@@ -9,6 +9,9 @@ Raspberry Pi Telegram Remote Control Bot
 
 ### Hardware
 
+* Raspberry Pi
+* Servo
+
 ![Scheme](img/pi-servo.png)
 
 ### Software
@@ -16,9 +19,9 @@ Raspberry Pi Telegram Remote Control Bot
 #### Node.js
 
 ```bash
-sudo apt update
-sudo apt upgrade
-sudo apt install npm
+$ sudo apt update
+$ sudo apt upgrade
+$ sudo apt install npm
 ```
 
 #### Pi Blaster
