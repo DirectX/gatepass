@@ -3,6 +3,7 @@
 Raspberry Pi Telegram Remote Control Bot
 
 ![Poster](img/pi-servo-remote.jpg)
+![Bot](img/bot.png)
 
 ## Prerequisites
 
@@ -30,20 +31,20 @@ Follow [Pi Blaster library](https://github.com/sarfata/pi-blaster) setup. Patch 
 ## Installation
 
 ```bash
-cp .env.example .env
+$ cp .env.example .env
 ```
 
 Replace placeholders in `.env` with actual API key
 
 ```bash
-npm install
-npm start
+$ npm install
+$ npm start
 ```
 
 ## Systemd Service
 
 ```bash
-sudo nano /etc/systemd/system/gatepass.service
+$ sudo nano /etc/systemd/system/gatepass.service
 ```
 
 ```bash
@@ -64,13 +65,13 @@ WantedBy=multi-user.target
 ### Start and Enable
 
 ```bash
-sudo service gatepass start
-sudo systemctl enable gatepass.service
+$ sudo service gatepass start
+$ sudo systemctl enable gatepass.service
 ```
 
 ### Status
 ```bash
-sudo service gatepass status
+$ sudo service gatepass status
 ● gatepass.service - GatePass
    Loaded: loaded (/etc/systemd/system/gatepass.service; disabled; vendor preset: enabled)
    Active: active (running) since Tue 2019-07-02 20:03:46 UTC; 1s ago
@@ -83,5 +84,5 @@ sudo service gatepass status
 
 ## References
 
-* [Raspberry Pi Servo Motor control](https://tutorials-raspberrypi.com/raspberry-pi-servo-motor-control/)
+* [Raspberry Pi Servo Motor Control](https://tutorials-raspberrypi.com/raspberry-pi-servo-motor-control/)
 * [Systemd Service in Node.js on Raspberry Pi](https://medium.com/@simon_prickett/writing-a-systemd-service-in-node-js-on-raspberry-pi-be88d9bc2e8d)
