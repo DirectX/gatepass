@@ -2,6 +2,8 @@
 
 Raspberry Pi Telegram Remote Control Bot
 
+![Poster](img/pi-servo-remote.jpg)
+
 ## Prerequisites
 
 ### Hardware
