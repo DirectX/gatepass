@@ -25,19 +25,39 @@ $ sudo apt install npm
 ```
 
 #### Pi Blaster
-Follow [Pi Blaster library](https://github.com/sarfata/pi-blaster) setup. Patch file `pi-blaster.c` before compile to set 50Hz servo frequency:
+
+Follow [Pi Blaster library](https://github.com/sarfata/pi-blaster) install instructions:
+
+```bash
+$ cd
+$ git clone https://github.com/sarfata/pi-blaster.git
+$ cd pi-blaster
+$ ./autogen.sh
+$ ./configure
+```
+
+Patch file `pi-blaster.c` before compile to set 50Hz servo frequency:
 
 ```c
 #define CYCLE_TIME_US 20000
 ```
 
+```bash
+$ make
+$ sudo make install
+```
+
 ## Installation
 
 ```bash
+$ cd
+$ mkdir projects && cd projects
+$ git clone https://github.com/DirectX/gatepass.git
+$ cd gatepass
 $ cp .env.example .env
 ```
 
-Replace placeholders in `.env` with actual API key
+Replace `<BOT_KEY>` placeholder in `.env` with actual Telegram API key obtained using @BotFather
 
 ```bash
 $ npm install
