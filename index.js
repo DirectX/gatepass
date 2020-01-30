@@ -1,27 +1,26 @@
-process.env.NTBA_FIX_319 = 1;
+// process.env.NTBA_FIX_319 = 1;
 
-const PiServo = require('pi-servo');
 const TelegramBot = require('node-telegram-bot-api');
 require('dotenv').config();
 
 const baseApiUrl = process.env.TELEGRAM_API_URL;
 const token = process.env.TELEGRAM_API_KEY;
 
-const servo = new PiServo(17);
-const angleClosed = 90;
-const angleOpened = 45;
+var Gpio = require('onoff').Gpio;
+var DOUT = new Gpio(4, 'out');
+DOUT.writeSync(0);
 
 async function openGate() {
 	return new Promise(resolve => {
-		servo.setDegree(angleOpened);
+		DOUT.writeSync(1);
 		setTimeout(() => {
-			servo.setDegree(angleClosed);
+			DOUT.writeSync(0);
 			resolve();
-		}, 400);
+		}, 100);
 	});
 }
 
-servo.open().then(async function () {
+async function main() {
 	console.log(`Connecting to Telegram bot API ${baseApiUrl}...`);
 	const bot = new TelegramBot(token, {
 		baseApiUrl: baseApiUrl,
@@ -54,4 +53,6 @@ servo.open().then(async function () {
 		console.log(`Opened by @${msg.from.username} at ${new Date()}`);
 		bot.sendMessage(msg.chat.id, 'Opened', opts);
 	});
-});
+};
+
+main();

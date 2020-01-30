@@ -25,6 +25,6 @@
   "dependencies": {
     "dotenv": "^8.0.0",
     "node-telegram-bot-api": "^0.30.0",
-    "pi-servo": "^1.0.2"
+    "onoff": "^5.0.1"
   }
 }
